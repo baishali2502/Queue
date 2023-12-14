@@ -34,6 +34,23 @@ public class queue<T>
     	size++;
     }
     
+//-------------------------------------- UC-2 ---------------------------------------
+    
+    /*
+     * @desc:This method removes an element from the queue
+     * @param:none
+     * @return:the removed element
+    */
+    T dequeue()
+    {
+    	if(isEmpty())
+    		return null;
+    	T temp = front.data;
+    	front = front.next;
+    	size--;
+    	return temp;
+    }
+    
     
 	/*
      * @desc:This method returns size of queue
