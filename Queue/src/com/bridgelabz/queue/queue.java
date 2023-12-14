@@ -2,6 +2,7 @@ package com.bridgelabz.queue;
 import java.util.*;
 
 
+
 //@desc:Implement queue using linked-list
 
 public class queue<T>
@@ -9,6 +10,31 @@ public class queue<T>
 	Node<T> front = null;
 	Node<T> rear = null;
 	int size = 0;
+	
+//-------------------------------------- UC-1 ---------------------------------------
+	
+	/*
+     * @desc:This method adds an element in the queue
+     * @param:Element to be added
+     * @return:void
+    */
+    void enqueue(T elem)
+    {
+    	Node<T> newnode = new Node<T>(elem);
+    	if(front==null)
+    	{
+    		front = newnode;
+    		rear = newnode;
+    	}
+    	else
+    	{
+    		rear.next = newnode;
+    		rear = newnode;
+    	}
+    	size++;
+    }
+    
+    
 	/*
      * @desc:This method returns size of queue
      * @param:none
